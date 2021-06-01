@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Quiz</string>
     <string name="update_btn">update</string>
-    <string name="update">updatename</string>
+    <string name="update">updateName</string>
+    <string name="list">List</string>
+    <string name="settings">Settings</string>
 </resources>
