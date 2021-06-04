@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sorting_method_names">
+        <item>State Name</item>
+        <item>Capital Name</item>
+        <item>State ID</item>
+    </array>
+
+    <array name="sorting_method_names_values">
+        <item>StateName</item>
+        <item>CapitalName</item>
+        <item>ID</item>
+    </array>
+
+    <string-array name="no_of_options" >
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
+    <string-array name="no_of_options_values" >
+        <item>three</item>
+        <item>four</item>
+    </string-array>
+</resources>
