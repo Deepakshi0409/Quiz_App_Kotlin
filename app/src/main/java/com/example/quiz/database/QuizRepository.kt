@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import androidx.sqlite.db.SimpleSQLiteQuery
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.quiz.data.Quiz
 import java.util.concurrent.Executors
 
@@ -46,5 +48,14 @@ class QuizRepository(application : Application) {
 
     fun getAllStates(): LiveData<PagedList<Quiz>>{
         return LivePagedListBuilder(quizDao.getAllStates(), 15).build()
+    }
+
+    fun getAllStates(sortBy: String): LiveData<PagedList<Quiz>>{
+        return LivePagedListBuilder(quizDao.getAllStates(constructQuery(sortBy)), 15).build()
+    }
+
+    private fun constructQuery(sortBy: String): SupportSQLiteQuery {
+        val query = "SELECT * FROM StateAndCapital ORDER BY "+sortBy+" ASC";
+        return SimpleSQLiteQuery(query)
     }
 }
