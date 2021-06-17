@@ -1,6 +1,7 @@
 package com.example.quiz.database
 
 import android.app.Application
+import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
@@ -57,5 +58,14 @@ class QuizRepository(application : Application) {
     private fun constructQuery(sortBy: String): SupportSQLiteQuery {
         val query = "SELECT * FROM StateAndCapital ORDER BY "+sortBy+" ASC";
         return SimpleSQLiteQuery(query)
+    }
+
+    @WorkerThread
+    fun getRandomState(): Quiz{
+        return quizDao.getRandomState()
+    }
+
+    fun getQuizStates(value: Int): LiveData<List<Quiz>>{
+        return quizDao.getQuizStates(value)
     }
 }
