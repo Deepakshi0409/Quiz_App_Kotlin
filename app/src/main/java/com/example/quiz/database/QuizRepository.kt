@@ -56,7 +56,7 @@ class QuizRepository(application : Application) {
     }
 
     private fun constructQuery(sortBy: String): SupportSQLiteQuery {
-        val query = "SELECT * FROM StateAndCapital ORDER BY "+sortBy+" ASC";
+        val query = "SELECT * FROM StateAndCapital ORDER BY $sortBy ASC"
         return SimpleSQLiteQuery(query)
     }
 
